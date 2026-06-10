@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ActivosModule } from './activos/activos.module';
 
 @Module({
   imports: [
@@ -19,8 +20,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
         rejectUnauthorized: false,
       },
       autoLoadEntities: true,
-      synchronize: true,
+      synchronize: false,
     }),
+
+    ActivosModule,
   ],
 })
 export class AppModule {
