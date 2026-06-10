@@ -8,20 +8,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ActivosModule = void 0;
 const common_1 = require("@nestjs/common");
-const activos_controller_1 = require("./activos.controller");
 const activos_service_1 = require("./activos.service");
+const activos_controller_1 = require("./activos.controller");
 const typeorm_1 = require("@nestjs/typeorm");
-const activos_entity_1 = require("./entities/activos.entity");
+const activo_entity_1 = require("./entities/activo.entity");
 let ActivosModule = class ActivosModule {
 };
 exports.ActivosModule = ActivosModule;
 exports.ActivosModule = ActivosModule = __decorate([
     (0, common_1.Module)({
         imports: [
-            typeorm_1.TypeOrmModule.forFeature([activos_entity_1.Activos]),
+            typeorm_1.TypeOrmModule.forFeature([activo_entity_1.Activo]),
         ],
         controllers: [activos_controller_1.ActivosController],
-        providers: [activos_service_1.ActivosService]
+        providers: [activos_service_1.ActivosService],
     })
 ], ActivosModule);
 //# sourceMappingURL=activos.module.js.map

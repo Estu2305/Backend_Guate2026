@@ -15,21 +15,33 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ActivosService = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
-const activos_entity_1 = require("./entities/activos.entity");
+const activo_entity_1 = require("./entities/activo.entity");
 const typeorm_2 = require("typeorm");
 let ActivosService = class ActivosService {
     activosRepository;
     constructor(activosRepository) {
         this.activosRepository = activosRepository;
     }
-    async findAll() {
+    create(createActivoDto) {
+        return this.activosRepository.save(createActivoDto);
+    }
+    findAll() {
         return this.activosRepository.find();
+    }
+    findOne(id) {
+        return this.activosRepository.findOne({ where: { id } });
+    }
+    update(id, updateActivoDto) {
+        return this.activosRepository.update(id, updateActivoDto);
+    }
+    remove(id) {
+        return this.activosRepository.delete(id);
     }
 };
 exports.ActivosService = ActivosService;
 exports.ActivosService = ActivosService = __decorate([
     (0, common_1.Injectable)(),
-    __param(0, (0, typeorm_1.InjectRepository)(activos_entity_1.Activos)),
+    __param(0, (0, typeorm_1.InjectRepository)(activo_entity_1.Activo)),
     __metadata("design:paramtypes", [typeorm_2.Repository])
 ], ActivosService);
 //# sourceMappingURL=activos.service.js.map

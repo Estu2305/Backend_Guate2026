@@ -1,14 +1,14 @@
 import { Module } from '@nestjs/common';
-import { ActivosController } from './activos.controller';
 import { ActivosService } from './activos.service';
+import { ActivosController } from './activos.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Activos } from './entities/activos.entity';
+import { Activo } from './entities/activo.entity';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([Activos]),
+    TypeOrmModule.forFeature([Activo]),
   ],
   controllers: [ActivosController],
-  providers: [ActivosService]
+  providers: [ActivosService],
 })
 export class ActivosModule {}

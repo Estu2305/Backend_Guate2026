@@ -1,4 +1,4 @@
-export declare class Activos {
+export declare class Activo {
     id: number;
     codigo: string;
     nombre: string;

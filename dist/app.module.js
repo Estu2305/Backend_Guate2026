@@ -10,7 +10,10 @@ exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const config_1 = require("@nestjs/config");
 const typeorm_1 = require("@nestjs/typeorm");
+const guia_module_1 = require("./guia/guia.module");
 const activos_module_1 = require("./activos/activos.module");
+const ubicacion_module_1 = require("./ubicacion/ubicacion.module");
+const asignacion_module_1 = require("./asignacion/asignacion.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -34,6 +37,9 @@ exports.AppModule = AppModule = __decorate([
                 synchronize: false,
             }),
             activos_module_1.ActivosModule,
+            guia_module_1.GuiaModule,
+            ubicacion_module_1.UbicacionModule,
+            asignacion_module_1.AsignacionModule,
         ],
     })
 ], AppModule);
