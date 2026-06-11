@@ -7,6 +7,8 @@ nest g controller auth
 nest g service auth
 
 //Hay tres depedencias que ya se usaron pero aun no se tiene apuntado
+npm install class-validator class-transformer
+npm install @nestjs/mapped-types
 
 // Dependencias Instalación JWT
 npm install @nestjs/jwt
