@@ -14,6 +14,8 @@ import { LicenciaModule } from './licencia/licencia.module';
 import { UbicacionModule } from './ubicacion/ubicacion.module';
 import { LicenciasAsignadasModule } from './carga/licencias/licencias-asignadas/licencias-asignadas.module';
 import { MantenimientosCargaModule } from './carga/mantenimientos-carga/mantenimientos-carga.module';
+import { ActivosCargaModule } from './carga/activos-carga/activos-carga.module';
+import { UsuariosCargaModule } from './carga/usuarios-carga/usuarios-carga.module';
 
 @Module({
   imports: [
@@ -58,7 +60,11 @@ import { MantenimientosCargaModule } from './carga/mantenimientos-carga/mantenim
 
     LicenciasAsignadasModule,
 
-    MantenimientosCargaModule
+    MantenimientosCargaModule,
+
+    ActivosCargaModule,
+
+    UsuariosCargaModule
   ],
 })
 export class AppModule {
