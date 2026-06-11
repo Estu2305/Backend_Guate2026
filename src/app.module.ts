@@ -9,6 +9,9 @@ import { CategoriasModule } from './categorias/categorias.module';
 import { MantenimientosModule } from './mantenimientos/mantenimientos.module';
 import { ReportesModule } from './reportes/reportes.module';
 import { ActivosModule } from './activos/activos.module';
+import { AsignacionModule } from './asignacion/asignacion.module';
+import { LicenciaModule } from './licencia/licencia.module';
+import { UbicacionModule } from './ubicacion/ubicacion.module';
 
 @Module({
   imports: [
@@ -43,7 +46,13 @@ import { ActivosModule } from './activos/activos.module';
 
     ReportesModule,
 
-    ActivosModule
+    ActivosModule,
+
+    AsignacionModule,
+
+    LicenciaModule,
+
+    UbicacionModule
   ],
 })
 export class AppModule {
