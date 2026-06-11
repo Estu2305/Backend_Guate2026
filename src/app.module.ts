@@ -12,6 +12,8 @@ import { ActivosModule } from './activos/activos.module';
 import { AsignacionModule } from './asignacion/asignacion.module';
 import { LicenciaModule } from './licencia/licencia.module';
 import { UbicacionModule } from './ubicacion/ubicacion.module';
+import { LicenciasAsignadasModule } from './carga/licencias/licencias-asignadas/licencias-asignadas.module';
+import { MantenimientosCargaModule } from './carga/mantenimientos-carga/mantenimientos-carga.module';
 
 @Module({
   imports: [
@@ -52,7 +54,11 @@ import { UbicacionModule } from './ubicacion/ubicacion.module';
 
     LicenciaModule,
 
-    UbicacionModule
+    UbicacionModule,
+
+    LicenciasAsignadasModule,
+
+    MantenimientosCargaModule
   ],
 })
 export class AppModule {
