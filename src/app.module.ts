@@ -8,6 +8,7 @@ import { UsuarioModule } from './usuario/usuario.module';
 import { CategoriasModule } from './categorias/categorias.module';
 import { MantenimientosModule } from './mantenimientos/mantenimientos.module';
 import { ReportesModule } from './reportes/reportes.module';
+import { ActivosModule } from './activos/activos.module';
 
 @Module({
   imports: [
@@ -41,6 +42,8 @@ import { ReportesModule } from './reportes/reportes.module';
     MantenimientosModule,
 
     ReportesModule,
+
+    ActivosModule
   ],
 })
 export class AppModule {
