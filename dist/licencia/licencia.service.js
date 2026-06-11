@@ -12,36 +12,44 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AsignacionService = void 0;
+exports.LicenciaService = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
-const asignacion_entity_1 = require("./entities/asignacion.entity");
-let AsignacionService = class AsignacionService {
-    asignacionesRepository;
-    constructor(asignacionesRepository) {
-        this.asignacionesRepository = asignacionesRepository;
+const licencia_entity_1 = require("./entities/licencia.entity");
+let LicenciaService = class LicenciaService {
+    licenciaRepository;
+    constructor(licenciaRepository) {
+        this.licenciaRepository = licenciaRepository;
     }
-    create(createAsignacionDto) {
-        return this.asignacionesRepository.save(createAsignacionDto);
+    create(createLicenciaDto) {
+        return this.licenciaRepository.save(createLicenciaDto);
     }
     findAll() {
-        return this.asignacionesRepository.find();
+        return this.licenciaRepository.find();
     }
     findOne(id) {
-        return this.asignacionesRepository.findOneBy({ id });
+        return this.licenciaRepository.findOneBy({ id });
     }
-    update(id, updateAsignacionDto) {
-        return this.asignacionesRepository.update({ id }, updateAsignacionDto);
+    update(id, updateLicenciaDto) {
+        return this.licenciaRepository.update(id, updateLicenciaDto);
     }
     remove(id) {
-        return this.asignacionesRepository.delete({ id });
+        return this.licenciaRepository.delete(id);
+    }
+    async findClosest(fecha) {
+        return await this.licenciaRepository
+            .createQueryBuilder('licencia')
+            .where('licencia.fecha_vencimiento >= :fecha', { fecha })
+            .orderBy('licencia.fecha_vencimiento', 'ASC')
+            .limit(10)
+            .getMany();
     }
 };
-exports.AsignacionService = AsignacionService;
-exports.AsignacionService = AsignacionService = __decorate([
+exports.LicenciaService = LicenciaService;
+exports.LicenciaService = LicenciaService = __decorate([
     (0, common_1.Injectable)(),
-    __param(0, (0, typeorm_1.InjectRepository)(asignacion_entity_1.Asignacion)),
+    __param(0, (0, typeorm_1.InjectRepository)(licencia_entity_1.Licencia)),
     __metadata("design:paramtypes", [typeorm_2.Repository])
-], AsignacionService);
-//# sourceMappingURL=asignacion.service.js.map
+], LicenciaService);
+//# sourceMappingURL=licencia.service.js.map

@@ -9,47 +9,70 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Asignacion = void 0;
+exports.Licencia = void 0;
 const typeorm_1 = require("typeorm");
-let Asignacion = class Asignacion {
+let Licencia = class Licencia {
     id;
-    activo_id;
-    usuario_id;
-    fecha_inicio;
-    fecha_fin;
-    motivo;
+    software;
+    version;
+    proveedor;
+    cantidad_licencias;
+    tipo_licencia;
+    fecha_adquisicion;
+    fecha_vencimiento;
+    costo;
     notas;
+    clave_producto;
 };
-exports.Asignacion = Asignacion;
+exports.Licencia = Licencia;
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
     __metadata("design:type", Number)
-], Asignacion.prototype, "id", void 0);
-__decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", Number)
-], Asignacion.prototype, "activo_id", void 0);
-__decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", Number)
-], Asignacion.prototype, "usuario_id", void 0);
-__decorate([
-    (0, typeorm_1.Column)({ type: 'date' }),
-    __metadata("design:type", Date)
-], Asignacion.prototype, "fecha_inicio", void 0);
-__decorate([
-    (0, typeorm_1.Column)({ type: 'date' }),
-    __metadata("design:type", Date)
-], Asignacion.prototype, "fecha_fin", void 0);
+], Licencia.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], Asignacion.prototype, "motivo", void 0);
+], Licencia.prototype, "software", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], Asignacion.prototype, "notas", void 0);
-exports.Asignacion = Asignacion = __decorate([
-    (0, typeorm_1.Entity)('asignaciones')
-], Asignacion);
-//# sourceMappingURL=asignacion.entity.js.map
+], Licencia.prototype, "version", void 0);
+__decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
+], Licencia.prototype, "proveedor", void 0);
+__decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", Number)
+], Licencia.prototype, "cantidad_licencias", void 0);
+__decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
+], Licencia.prototype, "tipo_licencia", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ type: 'date' }),
+    __metadata("design:type", Date)
+], Licencia.prototype, "fecha_adquisicion", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ type: 'date' }),
+    __metadata("design:type", Date)
+], Licencia.prototype, "fecha_vencimiento", void 0);
+__decorate([
+    (0, typeorm_1.Column)('decimal', {
+        precision: 10,
+        scale: 2,
+    }),
+    __metadata("design:type", Number)
+], Licencia.prototype, "costo", void 0);
+__decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
+], Licencia.prototype, "notas", void 0);
+__decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
+], Licencia.prototype, "clave_producto", void 0);
+exports.Licencia = Licencia = __decorate([
+    (0, typeorm_1.Entity)('licencias')
+], Licencia);
+//# sourceMappingURL=licencia.entity.js.map

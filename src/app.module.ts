@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { GuiaModule } from './guia/guia.module';
 import { ActivosModule } from './activos/activos.module';
 import { UbicacionModule } from './ubicacion/ubicacion.module';
 import { AsignacionModule } from './asignacion/asignacion.module';
+import { LicenciaModule } from './licencia/licencia.module';
 
 @Module({
   imports: [
@@ -28,11 +28,11 @@ import { AsignacionModule } from './asignacion/asignacion.module';
 
     ActivosModule,
 
-    GuiaModule,
-
     UbicacionModule,
 
     AsignacionModule,
+
+    LicenciaModule,
   ],
 })
 export class AppModule {

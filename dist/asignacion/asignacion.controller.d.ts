@@ -8,5 +8,5 @@ export declare class AsignacionController {
     findAll(): Promise<import("./entities/asignacion.entity").Asignacion[]>;
     findOne(id: string): Promise<import("./entities/asignacion.entity").Asignacion | null>;
     update(id: string, updateAsignacionDto: UpdateAsignacionDto): Promise<import("typeorm").UpdateResult>;
-    remove(id: string): Promise<import("./entities/asignacion.entity").Asignacion>;
+    remove(id: string): Promise<import("typeorm").DeleteResult>;
 }

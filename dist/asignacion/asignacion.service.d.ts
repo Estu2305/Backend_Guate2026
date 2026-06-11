@@ -9,5 +9,5 @@ export declare class AsignacionService {
     findAll(): Promise<Asignacion[]>;
     findOne(id: number): Promise<Asignacion | null>;
     update(id: number, updateAsignacionDto: UpdateAsignacionDto): Promise<import("typeorm").UpdateResult>;
-    remove(id: number): Promise<Asignacion>;
+    remove(id: number): Promise<import("typeorm").DeleteResult>;
 }

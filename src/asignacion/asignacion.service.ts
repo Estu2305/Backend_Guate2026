@@ -30,6 +30,6 @@ export class AsignacionService {
   }
 
   remove(id: number) {
-    return this.asignacionesRepository.remove({ id });
+    return this.asignacionesRepository.delete({ id });
   }
 }
