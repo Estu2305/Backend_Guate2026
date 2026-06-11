@@ -1,6 +1,13 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { RolesModule } from './roles/roles.module';
+import { AuthModule } from './auth/auth.module';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { UsuarioModule } from './usuario/usuario.module';
+import { CategoriasModule } from './categorias/categorias.module';
+import { MantenimientosModule } from './mantenimientos/mantenimientos.module';
+import { ReportesModule } from './reportes/reportes.module';
 
 @Module({
   imports: [
@@ -19,8 +26,21 @@ import { TypeOrmModule } from '@nestjs/typeorm';
         rejectUnauthorized: false,
       },
       autoLoadEntities: true,
-      synchronize: true,
+      synchronize: false,
     }),
+    UsuarioModule,
+
+    RolesModule,
+
+    AuthModule,
+
+    DashboardModule,
+
+    CategoriasModule,
+
+    MantenimientosModule,
+
+    ReportesModule,
   ],
 })
 export class AppModule {

@@ -1,0 +1,20 @@
+// Crear carpeta Backend
+nest new backend
+
+// Crear Modulos
+nest g module auth
+nest g controller auth
+nest g service auth
+
+//Hay tres depedencias que ya se usaron pero aun no se tiene apuntado
+
+// Dependencias Instalación JWT
+npm install @nestjs/jwt
+npm install @nestjs/passport
+npm install passport
+npm install passport-jwt
+npm install bcrypt
+
+npm install -D @types/bcrypt
+npm install -D @types/passport-jwt
+
