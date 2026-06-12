@@ -16,6 +16,9 @@ import { LicenciasAsignadasModule } from './carga/licencias/licencias-asignadas/
 import { MantenimientosCargaModule } from './carga/mantenimientos-carga/mantenimientos-carga.module';
 import { ActivosCargaModule } from './carga/activos-carga/activos-carga.module';
 import { UsuariosCargaModule } from './carga/usuarios-carga/usuarios-carga.module';
+import { AsignacionesCargaModule} from './carga/asignaciones-carga/asignaciones-carga.module';
+import { LicenciasAsignadasCargaModule } from './carga/licencias-asignadas-carga/licencias-asignadas-carga.module';
+import { UbicacionesCargaModule } from './carga/ubicaciones-carga/ubicaciones-carga.module';
 
 @Module({
   imports: [
@@ -64,7 +67,13 @@ import { UsuariosCargaModule } from './carga/usuarios-carga/usuarios-carga.modul
 
     ActivosCargaModule,
 
-    UsuariosCargaModule
+    UsuariosCargaModule,
+
+    AsignacionesCargaModule,
+    
+    LicenciasAsignadasCargaModule,
+
+    UbicacionesCargaModule
   ],
 })
 export class AppModule {
