@@ -6,11 +6,15 @@ import {
   ParseIntPipe,
   Patch,
   Post,
+  UseGuards,
 } from '@nestjs/common';
 
 import { RolesService } from './roles.service';
 import { CreateRoleDto } from './Dto/create-role.dto';
 import { UpdateRoleDto } from './Dto/update-role.dto';
+import { Roles } from '../auth/Decorators/roles.decorator';
+import { JwtAuthGuard } from '../auth/jwt-auth.guard';
+import { RolesGuard } from '../auth/guards/roles.guard';
 
 @Controller('roles')
 export class RolesController {
@@ -31,7 +35,11 @@ export class RolesController {
   }
 
   //Crear Roles
-
+  @Roles('Administrador')
+  @UseGuards(
+  JwtAuthGuard,
+  RolesGuard,
+  )
   @Post()
   create(
     @Body() data: CreateRoleDto,
@@ -40,6 +48,11 @@ export class RolesController {
   }
 
   //Editar Roles
+  @Roles('Administrador')
+  @UseGuards(
+  JwtAuthGuard,
+  RolesGuard,
+  )
   @Patch(':id')
   update(
     @Param('id', ParseIntPipe) id: number,

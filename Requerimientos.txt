@@ -20,3 +20,6 @@ npm install bcrypt
 npm install -D @types/bcrypt
 npm install -D @types/passport-jwt
 
+//Exportación de Reportes
+npm install exceljs
+
