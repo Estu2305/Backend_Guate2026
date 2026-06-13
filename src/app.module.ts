@@ -19,6 +19,8 @@ import { UsuariosCargaModule } from './carga/usuarios-carga/usuarios-carga.modul
 import { AsignacionesCargaModule} from './carga/asignaciones-carga/asignaciones-carga.module';
 import { LicenciasAsignadasCargaModule } from './carga/licencias-asignadas-carga/licencias-asignadas-carga.module';
 import { UbicacionesCargaModule } from './carga/ubicaciones-carga/ubicaciones-carga.module';
+import { TestController } from './prueba/test/test.controller';
+import { TestModule } from './prueba/test/test.module';
 
 @Module({
   imports: [
@@ -73,8 +75,11 @@ import { UbicacionesCargaModule } from './carga/ubicaciones-carga/ubicaciones-ca
     
     LicenciasAsignadasCargaModule,
 
-    UbicacionesCargaModule
+    UbicacionesCargaModule,
+
+    TestModule
   ],
+  controllers: [TestController],
 })
 export class AppModule {
   
