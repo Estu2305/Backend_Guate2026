@@ -3,6 +3,7 @@ import {
     IsNotEmpty,
     IsNumber,
     IsDateString,
+    IsOptional,
 } from 'class-validator';//Importacion para la validacion de cada uno de los campos
 
 export class CreateAsignacionDto {
@@ -17,6 +18,7 @@ export class CreateAsignacionDto {
     @IsDateString()//Corrobora que el campo mandado en el body sea una fecha valida
     fecha_inicio!: Date;
 
+    @IsOptional()
     @IsDateString()
     fecha_fin!: Date;
 
